@@ -9,7 +9,7 @@
     "build:prod": "webpack -p && cp src/index.html"
   },
   "author": "AarKay",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4",
     "react": "^15.4.2",
