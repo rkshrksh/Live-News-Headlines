@@ -11,6 +11,8 @@ I started learnig React.js and came in knowledge about newsapi at the same time,
 ## Installation
 
 Get your free API from https://newsapi.org/ and add it in **/src/app/components/Content.js**
+for installation run command **npm install**
+to start run command **npm start**
 
 ## Contributors
 ### Rakesh Gautam
