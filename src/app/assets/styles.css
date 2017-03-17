@@ -1,0 +1,19 @@
+.fixed-content {
+    top: 0;
+    bottom:0;
+    right: 0;
+    padding-top: 70px;
+    position:fixed;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+@media (max-width: 767px) {
+    .fixed-content {
+        position: static;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
