@@ -4,6 +4,7 @@
 import React from "react";
 import "whatwg-fetch";
 import _ from "lodash";
+import Share from './Share.js';
 
 export class Content extends React.Component {
     constructor() {
@@ -20,7 +21,7 @@ export class Content extends React.Component {
     }
 
     getData(sr = "abc-news-au", nm = "ABC News (AU)") {
-        const url = `https://newsapi.org/v1/articles?source=${sr}&apiKey=YOUR_NEWSAPI_HERE`;
+        const url = `https://newsapi.org/v1/articles?source=${sr}&apiKey=213327409d384371851777e7c7f78dfe`;
         fetch(url)
             .then(function (response) {
                 return response.json()
@@ -42,6 +43,7 @@ export class Content extends React.Component {
                     className="lead">{article.description}</span>&nbsp;
                     <a href={article.url} target="_blank">Read More...</a>
                 </p>
+                <Share share={article.url} title={article.title} />
                 <img src={article.urlToImage} className="col-2 rounded" height="100"/>
             </div>
         });
