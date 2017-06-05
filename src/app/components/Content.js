@@ -21,7 +21,7 @@ export class Content extends React.Component {
     }
 
     getData(sr = "abc-news-au", nm = "ABC News (AU)") {
-        const url = `https://newsapi.org/v1/articles?source=${sr}&apiKey=213327409d384371851777e7c7f78dfe`;
+        const url = `https://newsapi.org/v1/articles?source=${sr}&apiKey=YOUR_NEWSAPI_HERE`;
         fetch(url)
             .then(function (response) {
                 return response.json()
