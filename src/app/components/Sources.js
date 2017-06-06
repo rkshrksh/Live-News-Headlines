@@ -8,31 +8,40 @@ import _ from "lodash";
 export class Sources extends React.Component {
     constructor() {
         super();
-        this.state = {}
+        this.state = {};
     }
 
     componentWillMount() {
         const url = `https://newsapi.org/v1/sources?language=en`;
         fetch(url)
-            .then(function (response) {
-                return response.json()
+            .then(function(response) {
+                return response.json();
             })
-            .then((json) => {
+            .then(json => {
                 this.setState({
                     data: json.sources
-                })
-            })
+                });
+            });
     }
 
     render() {
-        let sources = _.map(this.state.data, (source) => {
-            return (<a key={source.id} className="list-group-item" href={"#"+source.id} onClick={(e) => {
-                this.props.updateSource(source.id, source.name) }}>
-                <img src={source.urlsToLogos.small} width="50" height="50"/>&nbsp;&nbsp;{source.name}
-            </a>)
+        let sources = _.map(this.state.data, source => {
+            console.log(source);
+            return (
+                <div className="list-group-item">
+                    * &nbsp;
+                    <a
+                        key={source.id}
+                        href={"#" + source.id}
+                        onClick={e => {
+                            this.props.updateSource(source.id, source.name);
+                        }}
+                    >
+                        {source.name}
+                    </a>
+                </div>
+            );
         });
-        return (
-            <div className="list-group">{sources}</div>
-        );
+        return <div className="list-group">{sources}</div>;
     }
 }
