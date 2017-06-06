@@ -4,6 +4,7 @@
 import React from "react";
 import "whatwg-fetch";
 import _ from "lodash";
+import Share from './Share.js';
 
 export class Content extends React.Component {
     constructor() {
@@ -42,6 +43,7 @@ export class Content extends React.Component {
                     className="lead">{article.description}</span>&nbsp;
                     <a href={article.url} target="_blank">Read More...</a>
                 </p>
+                <Share share={article.url} title={article.title} />
                 <img src={article.urlToImage} className="col-2 rounded" height="100"/>
             </div>
         });
